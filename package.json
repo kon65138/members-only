@@ -1,0 +1,45 @@
+{
+  "name": "members-only",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/kon65138/members-only#readme",
+  "bugs": {
+    "url": "https://github.com/kon65138/members-only/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kon65138/members-only.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "start": "node app.js",
+    "dev": "node --watch-path=app.js --watch-path=config --watch-path=controllers --watch-path=db --watch-path=lib --watch-path=public --watch-path=routes --watch-path=views app.js"
+  },
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "connect-pg-simple": "^10.0.0",
+    "dotenv": "^17.4.2",
+    "ejs": "^6.0.1",
+    "express": "^5.2.1",
+    "express-rate-limit": "^8.5.2",
+    "express-session": "^1.19.0",
+    "passport": "^0.7.0",
+    "passport-local": "^1.0.0",
+    "pg": "^8.22.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.6.0",
+    "eslint-config-prettier": "^10.1.8",
+    "globals": "^17.7.0",
+    "prettier": "^3.9.5"
+  }
+}

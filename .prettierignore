@@ -1,0 +1,7 @@
+node_modules/
+package-lock.json
+
+# Prettier has no EJS parser. Its `html` parser hard-errors on EJS tags in
+# attribute position (`<div <% if (x) { %>hidden<% } %>>`) and silently skips
+# formatting any <script> block containing <% %>. Leave .ejs to the editor.
+*.ejs
