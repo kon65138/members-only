@@ -7,6 +7,7 @@ const passport = require('passport');
 
 const pool = require('./db/pool');
 const indexRouter = require('./routes/index');
+const signUpRouter = require('./routes/signUpRouter');
 
 const app = express();
 
@@ -48,6 +49,7 @@ app.use((req, res, next) => {
 });
 
 app.use('/', indexRouter);
+app.use('/signUp', signUpRouter);
 
 app.use((err, req, res, next) => {
   console.error(err);
