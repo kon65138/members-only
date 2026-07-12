@@ -8,6 +8,7 @@ const passport = require('passport');
 const pool = require('./db/pool');
 const indexRouter = require('./routes/index');
 const signUpRouter = require('./routes/signUpRouter');
+require('./config/passport');
 
 const app = express();
 
@@ -38,7 +39,7 @@ app.use(
     cookie: { maxAge: 1000 * 60 * 60 * 24 }, // 1 day
   }),
 );
-
+app.use(passport.initialize());
 app.use(passport.session());
 
 // makes `currentUser` and `dev` available in every EJS template
@@ -57,4 +58,4 @@ app.use((err, req, res, next) => {
 });
 
 const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => console.log(`Listening on ${PORT}`));
+app.listen(PORT, () => console.log(`running on http://localhost:${PORT}`));
