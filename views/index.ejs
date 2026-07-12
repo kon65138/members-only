@@ -12,23 +12,24 @@
     />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/index.css" />
-    <script src="js/indexJs.js" defer></script>
   </head>
   <body>
     <h1 id="title">Club House</h1>
     <div class="buttons">
-        <button id="login">
+        <a href="/login" class="btn" id="login">
             <div>Login</div>
             <div>-></div>
-        </button>
-        <button id="signUp">
+        </a>
+        <a href="/signUp" class="btn" id="signUp">
             <div>Sign up</div>
             <div>-></div>
-        </button>
-        <button id="genSignUp">
-            <div>Sign up with generated credentials (fast and anonymous)</div>
-            <div>-></div>
-        </button>
+        </a>
+        <form action="/genSignUp" method="post">
+            <button class="btn" id="genSignUp">
+                <div>Sign up with generated credentials (fast and anonymous)</div>
+                <div>-></div>
+            </button>
+        </form>
     </div>
     <%- include('partials/dev-reload') %>
   </body>

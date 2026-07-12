@@ -1,7 +1,7 @@
 #title {
   font-family: 'Archivo Black', Impact, sans-serif;
   width: 100%;
-  margin-top: 15rem;
+  margin-top: 12rem;
   font-size: 10rem;
   text-align: center;
   color: white;
@@ -13,14 +13,20 @@
 }
 
 .buttons {
-  margin-top: 12rem;
+  margin-top: 10rem;
   display: flex;
   flex-direction: column;
   gap: 1rem;
   align-items: center;
 }
 
-button {
+/* the form wrapping the generated-credentials button is a flex item too;
+   keep it from stretching so its button matches the anchors' width */
+.buttons > form {
+  display: flex;
+}
+
+.btn {
   position: relative;
   overflow: hidden;
   display: flex;
@@ -28,7 +34,6 @@ button {
   justify-content: space-between;
   border: none;
   box-shadow: inset 0 0 0 4px black;
-  border-radius: 30px;
   height: 4rem;
   padding: 1rem;
   width: 50rem;
@@ -38,7 +43,7 @@ button {
 /* the sliding panel: occupies the right 30%, parked just off the right edge.
    the mask bites an ellipse out of its left edge -- 10% of the panel deep and
    its full height tall -- leaving a concave curve, the rest solid black */
-button::before {
+.btn::before {
   content: '';
   position: absolute;
   /* overhang the right edge: if the panel stopped exactly on the rounded
@@ -60,28 +65,28 @@ button::before {
   );
 }
 
-button:hover::before,
-button:focus-visible::before {
+.btn:hover::before,
+.btn:focus-visible::before {
   transform: translateX(0);
 }
 
 /* positioned, so they paint above the absolutely-positioned ::before */
-button > div {
+.btn > div {
   position: relative;
 }
 
-button > div:last-child {
+.btn > div:last-child {
   transition: color 350ms ease;
 }
 
-button:hover > div:last-child,
-button:focus-visible > div:last-child {
+.btn:hover > div:last-child,
+.btn:focus-visible > div:last-child {
   color: white;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  button::before,
-  button > div:last-child {
+  .btn::before,
+  .btn > div:last-child {
     transition: none;
   }
 }
