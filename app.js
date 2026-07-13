@@ -8,6 +8,7 @@ const passport = require('passport');
 const pool = require('./db/pool');
 const indexRouter = require('./routes/index');
 const signUpRouter = require('./routes/signUpRouter');
+const loginRouter = require('./routes/loginRouter');
 require('./config/passport');
 
 const app = express();
@@ -42,6 +43,12 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
+app.use((req, res, next) => {
+  console.log(req.session);
+  console.log(req.user);
+  next();
+});
+
 // makes `currentUser` and `dev` available in every EJS template
 app.use((req, res, next) => {
   res.locals.currentUser = req.user;
@@ -51,6 +58,7 @@ app.use((req, res, next) => {
 
 app.use('/', indexRouter);
 app.use('/signUp', signUpRouter);
+app.use('/login', loginRouter);
 
 app.use((err, req, res, next) => {
   console.error(err);

@@ -1,0 +1,58 @@
+body {
+  gap: 6rem;
+}
+
+h2 {
+  color: white;
+  min-width: 100%;
+}
+
+.formWrapper {
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60vw;
+  contain: content;
+  overflow: hidden;
+}
+
+#loginForm {
+  border: 2px solid rgb(80, 80, 80);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  color: white;
+  width: 100%;
+  height: 100%;
+}
+
+.inptWrapper {
+  width: 100%;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.inptWrapper div {
+  min-width: fit-content;
+}
+
+input {
+  padding: 0 0.2rem 0 0.2rem;
+  flex: 1;
+  height: 2rem;
+  border: 1px solid rgb(80, 80, 80);
+}
+
+button {
+  border: 1px solid rgb(80, 80, 80);
+  height: 2rem;
+  width: 10rem;
+}
+
+.errors {
+  width: 100%;
+}

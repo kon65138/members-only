@@ -20,7 +20,7 @@ const verifyCallback = (username, password, done) => {
       if (isValid) {
         return done(null, user);
       } else {
-        return (null, false);
+        return done(null, false);
       }
     })
     .catch((err) => {
