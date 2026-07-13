@@ -31,4 +31,9 @@ async function findById(id) {
   return user;
 }
 
-module.exports = { findByUsername, createUser, findById };
+async function getAllUsernames() {
+  const results = await pool.query('SELECT username FROM users');
+  return results;
+}
+
+module.exports = { findByUsername, createUser, findById, getAllUsernames };

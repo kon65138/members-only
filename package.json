@@ -21,7 +21,7 @@
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "start": "node app.js",
-    "dev": "node --watch-path=app.js --watch-path=config --watch-path=controllers --watch-path=db --watch-path=lib --watch-path=public --watch-path=routes --watch-path=views app.js"
+    "dev": "node --watch-path=app.js --watch-path=config --watch-path=controllers --watch-path=db --watch-path=lib --watch-path=public --watch-path=routes --watch-path=views  --watch-path=middleware app.js"
   },
   "dependencies": {
     "bcryptjs": "^3.0.3",

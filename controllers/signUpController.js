@@ -1,9 +1,9 @@
 // controllers/signUpController.js
 const { genPassword } = require('../lib/passwordUtils');
-const { createUser, findByUsername } = require('../db/queries');
+const { createUser } = require('../db/queries');
 
 function signUpGet(req, res, next) {
-  res.render('signUp');
+  res.render('signUp', { errors: false });
 }
 
 async function signUpPost(req, res, next) {
@@ -18,8 +18,7 @@ async function signUpPost(req, res, next) {
     isadmin: false,
   });
   console.log(user);
-  const result = await findByUsername(user[0].username);
-  res.send(`signed in as ${result}`);
+  res.send(`successfully signed up as ${user.username}`);
 }
 
 module.exports = { signUpGet, signUpPost };

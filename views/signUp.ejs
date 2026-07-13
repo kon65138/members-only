@@ -34,7 +34,14 @@
                 <label for="password">Password</label>
                 <input type="password" id="password" name="password" required>
             </div>
-            <span class="errors"></span>
+            <div class="inptWrapper">
+                <label for="passwordConfirmation">Password Confirmation</label>
+                <input type="password" id="passwordConfirmation" name="password_confirmation" required>
+            </div>
+            <span class="errors"><ul><% if (errors) {errors.forEach( error => { %>
+                                        <li><%= error.msg %></li>
+                                    <% })} %>
+                                </ul></span>
             <button type="submit">Sign Up</button>
         </form>
     </div>
