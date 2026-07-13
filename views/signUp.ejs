@@ -20,23 +20,23 @@
         <form action="signUp" id="signUpForm" method="post">
             <div class="inptWrapper">
                 <label for="firstName">First Name</label>
-                <input type="text" id="firstName" name="first_name" required>
+                <input type="text" id="firstName" name="first_name" value="<%= values.firstName ? values.firstName : '' %>" required>
             </div>
             <div class="inptWrapper">
                 <label for="lastName">Last Name</label>
-                <input type="text" id="lastName" name="last_name">
+                <input type="text" id="lastName" name="last_name" value="<%= values.lastName ? values.lastName : '' %>">
             </div>
             <div class="inptWrapper">
                 <label for="username">Username or Email</label>
-                <input type="text" id="username" name="username" required>
+                <input type="text" id="username" name="username" value="<%= values.username ? values.username : '' %>" required>
             </div>
             <div class="inptWrapper">
                 <label for="password">Password</label>
-                <input type="password" id="password" name="password" required>
+                <input type="password" id="password" name="password" value="<%= values.password ? values.password : '' %>" required>
             </div>
             <div class="inptWrapper">
                 <label for="passwordConfirmation">Password Confirmation</label>
-                <input type="password" id="passwordConfirmation" name="password_confirmation" required>
+                <input type="password" id="passwordConfirmation" name="password_confirmation" value="<%= values.confirmPassword ? values.confirmPassword : '' %>" required>
             </div>
             <span class="errors"><ul><% if (errors) {errors.forEach( error => { %>
                                         <li><%= error.msg %></li>

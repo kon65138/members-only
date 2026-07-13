@@ -3,7 +3,16 @@ const { genPassword } = require('../lib/passwordUtils');
 const { createUser } = require('../db/queries');
 
 function signUpGet(req, res, next) {
-  res.render('signUp', { errors: false });
+  res.render('signUp', {
+    errors: false,
+    values: {
+      firstName: false,
+      lastName: false,
+      username: false,
+      password: false,
+      confirmPassword: false,
+    },
+  });
 }
 
 async function signUpPost(req, res, next) {
