@@ -17,8 +17,11 @@ async function signUpPost(req, res, next) {
     ismember: false,
     isadmin: false,
   });
-  console.log(user);
-  res.send(`successfully signed up as ${user.username}`);
+  // establish a session for the newly created user (calls serializeUser)
+  req.login(user, (err) => {
+    if (err) return next(err);
+    res.redirect('/homepage');
+  });
 }
 
 module.exports = { signUpGet, signUpPost };

@@ -79,6 +79,7 @@ body {
 }
 
 #titleHeader .btn {
+  width: 14rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -88,8 +89,14 @@ body {
   padding: 1rem;
 }
 
+#titleHeader .btn form {
+  width: 100%;
+}
+
 #titleHeader .btn a,
 #titleHeader .btn button {
+  text-align: center;
+  width: 100%;
   border: 1px solid grey;
   padding: 0.2rem;
 }
