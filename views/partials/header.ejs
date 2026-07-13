@@ -1,0 +1,14 @@
+<header id="titleHeader">
+    <h1 id="title"><a href="/">Club House</a></h1>
+    <div class="btn">
+        <% if (currentUser) { %>
+        logged in as <%= currentUser.username %>
+        <form action="/logout" method="post">
+            <button type="submit">Logout</button>
+        </form>
+        <% } else { %>
+        <a href="/login">Login</a>
+        <a href="/signUp">Sign Up</a>
+        <% } %>
+    </div>
+</header>

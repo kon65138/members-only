@@ -53,7 +53,18 @@ body {
   align-items: center;
 }
 
+#titleHeader {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  width: 100%;
+  padding: 1rem;
+}
+
 #title {
+  padding-left: 15vw;
+  flex: 1;
   font-family: 'Archivo Black', Impact, sans-serif;
   width: 100%;
   margin-top: 3rem;
@@ -65,4 +76,20 @@ body {
     0 -0.3em 0 rgba(255, 255, 255, 0.25),
     0 -0.45em 0 rgba(255, 255, 255, 0.12),
     0 -0.6em 0 rgba(255, 255, 255, 0.05);
+}
+
+#titleHeader .btn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  border: 1px solid grey;
+  padding: 1rem;
+}
+
+#titleHeader .btn a,
+#titleHeader .btn button {
+  border: 1px solid grey;
+  padding: 0.2rem;
 }

@@ -1,7 +1,7 @@
 #title {
   font-family: 'Archivo Black', Impact, sans-serif;
   width: 100%;
-  margin-top: 12rem;
+  margin-top: 10rem;
   font-size: 10rem;
   text-align: center;
   color: white;
@@ -10,6 +10,8 @@
     0 -0.3em 0 rgba(255, 255, 255, 0.25),
     0 -0.45em 0 rgba(255, 255, 255, 0.12),
     0 -0.6em 0 rgba(255, 255, 255, 0.05);
+  padding: 0;
+  flex: none;
 }
 
 .buttons {
