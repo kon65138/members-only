@@ -1,0 +1,41 @@
+h2 {
+  color: white;
+  min-width: 100%;
+}
+
+.mainWrapper,
+.msgContainer {
+  width: 60vw;
+  display: flex;
+  flex-direction: column;
+}
+
+.msgContainer {
+  border: 2px solid grey;
+  height: 60vh;
+}
+
+.btnBar {
+  display: flex;
+  flex-direction: row;
+  border-bottom: 2px solid grey;
+  min-height: 2rem;
+  flex-wrap: nowrap;
+  width: 100%;
+}
+
+.btnBar div {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  border: 1px solid grey;
+  flex: 1;
+  color: white;
+  height: 100%;
+}
+
+.msgs {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}

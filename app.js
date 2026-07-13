@@ -9,6 +9,7 @@ const pool = require('./db/pool');
 const indexRouter = require('./routes/index');
 const signUpRouter = require('./routes/signUpRouter');
 const loginRouter = require('./routes/loginRouter');
+const homepageRouter = require('./routes/homepageRouter');
 require('./config/passport');
 
 const app = express();
@@ -59,6 +60,7 @@ app.use((req, res, next) => {
 app.use('/', indexRouter);
 app.use('/signUp', signUpRouter);
 app.use('/login', loginRouter);
+app.use('/homepage', homepageRouter);
 
 app.use((err, req, res, next) => {
   console.error(err);

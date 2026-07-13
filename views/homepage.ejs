@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+    href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap"
+    rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/homepage.css">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="title"><a href="/">Club House</a></h1>
+    <div class="mainWrapper">
+        <h2>Messages</h2>
+        <div class="msgContainer">
+            <div class="btnBar">
+                <div class="joinClub"><a href="/joinClub">Join The Club</a></div>
+                <div class="adminLogin"><a href="/adminLogin">Login As Admin</a></div>
+                <div class="createMsg"><a href="/createMessage">Create Message</a></div>
+            </div>
+            <div class="msgs"></div>
+        </div>
+    </div>
+    <%- include('partials/dev-reload') %>
+</body>
+</html>

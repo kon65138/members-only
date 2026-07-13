@@ -12,7 +12,7 @@ logInRouter.post(
     failureMessage: 'incorrect creds',
     failureRedirect: 'login',
     successMessage: 'successfully logged in',
-    successRedirect: 'login',
+    successRedirect: 'homepage',
   }),
 );
 
