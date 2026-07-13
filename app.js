@@ -10,6 +10,7 @@ const indexRouter = require('./routes/index');
 const signUpRouter = require('./routes/signUpRouter');
 const loginRouter = require('./routes/loginRouter');
 const homepageRouter = require('./routes/homepageRouter');
+const createMessageRouter = require('./routes/createMessageRouter');
 require('./config/passport');
 
 const app = express();
@@ -61,6 +62,7 @@ app.use('/', indexRouter);
 app.use('/signUp', signUpRouter);
 app.use('/login', loginRouter);
 app.use('/homepage', homepageRouter);
+app.use('/createMessage', createMessageRouter);
 
 app.use((err, req, res, next) => {
   console.error(err);

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+    href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap"
+    rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/createMessage.css">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="title"><a href="/">Club House</a></h1>
+    <div class="formWrapper">
+        <h2>Create Message</h2>
+        <form action="createMessage" method="post" id="createMessageForm">
+            <div class="inptWrapper">
+                <textarea id="message" name="message" rows="5" required><%= typeof message !== 'undefined' ? message : '' %></textarea>
+            </div>
+            <span class="errors"><ul><% if (errors) {errors.forEach( error => { %>
+                                        <li><%= error.msg %></li>
+                                    <% })} %>
+                                </ul></span>
+            <button type="submit">Create Message</button>
+        </form>
+    </div>
+    <%- include('partials/dev-reload') %>
+</body>
+</html>
