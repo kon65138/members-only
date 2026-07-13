@@ -7,6 +7,11 @@ const signUpRouter = Router();
 
 signUpRouter.get('/', signUpController.signUpGet);
 
-signUpRouter.post('/', signUpValidator, validate, signUpController.signUpPost);
+signUpRouter.post(
+  '/',
+  signUpValidator,
+  validate('signUp'),
+  signUpController.signUpPost,
+);
 
 module.exports = signUpRouter;

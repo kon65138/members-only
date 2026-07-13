@@ -19,7 +19,12 @@
         <h2>Create Message</h2>
         <form action="createMessage" method="post" id="createMessageForm">
             <div class="inptWrapper">
-                <textarea id="message" name="message" rows="5" required><%= typeof message !== 'undefined' ? message : '' %></textarea>
+                <label for="messageTitle">Message Title</label>
+                <input type="text" name="title" id="messageTitle" value="<%= values.title ? values.title : '' %>" required>
+            </div>
+            <div class="inptWrapper">
+                <label for="message">Message Body</label>
+                <textarea id="message" name="message" rows="5"><%= values.message ? values.message : '' %></textarea>
             </div>
             <span class="errors"><ul><% if (errors) {errors.forEach( error => { %>
                                         <li><%= error.msg %></li>

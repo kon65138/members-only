@@ -36,4 +36,29 @@ async function getAllUsernames() {
   return results;
 }
 
-module.exports = { findByUsername, createUser, findById, getAllUsernames };
+async function createMessage({ title, body, author_id }) {
+  const result = await pool.query(
+    // created_at is omitted on purpose: the column defaults to now()
+    `INSERT INTO messages (title, body, author_id)
+     VALUES ($1, $2, $3)
+     RETURNING *`,
+    [title, body, author_id],
+  );
+  return result.rows[0];
+}
+
+async function getAllMessages() {
+  const results = await pool.query(
+    'SELECT messages.*, users.username FROM messages JOIN users ON users.id = messages.author_id ORDER BY created_at DESC;',
+  );
+  return results.rows;
+}
+
+module.exports = {
+  findByUsername,
+  createUser,
+  findById,
+  getAllUsernames,
+  createMessage,
+  getAllMessages,
+};

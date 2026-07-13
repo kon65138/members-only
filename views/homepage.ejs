@@ -23,7 +23,22 @@
                 <div class="adminLogin"><a href="/adminLogin">Login As Admin</a></div>
                 <div class="createMsg"><a href="/createMessage">Create Message</a></div>
             </div>
-            <div class="msgs"></div>
+            <div class="msgs">
+                <% messages.forEach((message) => { %>
+                <article class="message">
+                    <header>
+                        <h3><%= message.title %></h3>
+                        <p class="meta">
+                            by <%= message.username %>
+                            on <time datetime="<%= message.created_at.toISOString() %>">
+                                    <%= message.created_at.toLocaleString() %>
+                                </time>
+                        </p>
+                    </header>
+                    <p class="body"><%= message.body %></p>
+                </article>
+                <% }) %>
+            </div>
         </div>
     </div>
     <%- include('partials/dev-reload') %>
