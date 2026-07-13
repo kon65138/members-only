@@ -33,7 +33,7 @@ async function findById(id) {
 
 async function getAllUsernames() {
   const results = await pool.query('SELECT username FROM users');
-  return results;
+  return results[0];
 }
 
 async function createMessage({ title, body, author_id }) {
@@ -54,7 +54,16 @@ async function getAllMessages() {
   return results.rows;
 }
 
+async function upgradeToAdmin(username) {
+  const results = await pool.query(
+    'UPDATE users SET isadmin = true WHERE username = $1',
+    [username],
+  );
+  return results[0];
+}
+
 module.exports = {
+  upgradeToAdmin,
   findByUsername,
   createUser,
   findById,

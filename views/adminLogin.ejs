@@ -10,18 +10,14 @@
     rel="stylesheet"
     />
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/adminLogin.css">
     <title>Document</title>
 </head>
 <body>
     <%- include('partials/header') %>
     <div class="formWrapper">
-        <h2>Login</h2>
-        <form action="/login" method="post" id="loginForm">
-            <div class="inptWrapper">
-                <label for="username">Username or Email</label>
-                <input type="text" id="username" name="username" required>
-            </div>
+        <h2>Admin Login</h2>
+        <form action="/adminLogin" method="post" id="adminLoginForm">
             <div class="inptWrapper">
                 <label for="password">password</label>
                 <input type="password" id="password" name="password" required>

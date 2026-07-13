@@ -1,5 +1,5 @@
 <header id="titleHeader">
-    <h1 id="title"><a href="/">Club House</a></h1>
+    <h1 id="title"><a href="<%= currentUser ? '/homepage' : '/' %>">Club House</a></h1>
     <div class="btn">
         <% if (currentUser) { %>
         logged in as <%= currentUser.username %>

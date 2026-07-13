@@ -17,7 +17,7 @@
     <%- include('partials/header') %>
     <div class="formWrapper">
         <h2>Sign Up</h2>
-        <form action="signUp" id="signUpForm" method="post">
+        <form action="/signUp" id="signUpForm" method="post">
             <div class="inptWrapper">
                 <label for="firstName">First Name</label>
                 <input type="text" id="firstName" name="first_name" value="<%= values.first_name ? values.first_name : '' %>" required>
