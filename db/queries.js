@@ -49,14 +49,14 @@ async function createMessage({ title, body, author_id }) {
 
 async function getAllMessages() {
   const results = await pool.query(
-    'SELECT messages.*, users.username FROM messages JOIN users ON users.id = messages.author_id ORDER BY created_at DESC;',
+    'SELECT messages.*, users.username FROM messages JOIN users ON users.id = messages.author_id ORDER BY created_at DESC',
   );
   return results.rows;
 }
 
 async function upgradeToAdmin(username) {
   const results = await pool.query(
-    'UPDATE users SET isadmin = true WHERE username = $1',
+    'UPDATE users SET isadmin = true WHERE username = $1 RETURNING *',
     [username],
   );
   return results[0];
@@ -64,13 +64,22 @@ async function upgradeToAdmin(username) {
 
 async function upgradeToMember(username) {
   const results = await pool.query(
-    'UPDATE users SET ismember = true WHERE username = $1',
+    'UPDATE users SET ismember = true WHERE username = $1 RETURNING *',
     [username],
   );
   return results[0];
 }
 
+async function deleteMessage(messageId) {
+  const results = await pool.query('DELETE FROM messages WHERE id = $1', [
+    messageId,
+  ]);
+
+  return results[0];
+}
+
 module.exports = {
+  deleteMessage,
   upgradeToMember,
   upgradeToAdmin,
   findByUsername,

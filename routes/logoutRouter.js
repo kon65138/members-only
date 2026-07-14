@@ -1,10 +1,10 @@
 const { Router } = require('express');
+const { isAuth } = require('../middleware/authMiddleware');
 
 const logoutRouter = Router();
 
-logoutRouter.post('/', (req, res, next) => {
+logoutRouter.post('/', isAuth, (req, res, next) => {
   req.logout((err) => {
-    // async in Passport 0.6+
     if (err) return next(err);
     res.redirect('/');
   });

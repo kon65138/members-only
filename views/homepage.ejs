@@ -53,6 +53,14 @@
                                     on <time datetime="<%= message.created_at.toISOString() %>">
                                     <%= message.created_at.toLocaleString() %>
                                     </time>
+                                <%} else if (currentUser.isadmin) {%>
+                                    by <%= message.username %>
+                                    on <time datetime="<%= message.created_at.toISOString() %>">
+                                    <%= message.created_at.toLocaleString() %>
+                                    </time>
+                                    <form action="/delete/<%= message.id %>" method="post" class="deleteForm">
+                                        <button type="submit" class="deleteBtn">Delete</button>
+                                    </form>
                                 <%} else { %>
                                     by *****
                                     on *****
@@ -62,7 +70,9 @@
                             <% } %>
                         </p>
                     </header>
-                    <p class="body"><%= message.body %></p>
+                    <% if (message.body) {%>
+                        <p class="body"><%= message.body %></p> 
+                    <%} %>
                 </article>
                 <% }) %>
             </div>
