@@ -20,18 +20,6 @@ require('./config/passport');
 
 const app = express();
 
-if (process.env.NODE_ENV !== 'production') {
-  // the browser holds this stream open; when the server restarts the stream
-  // drops, and the browser reloads itself (see views/partials/dev-reload.ejs)
-  app.get('/dev/reload', (req, res) => {
-    res.set({
-      'Content-Type': 'text/event-stream',
-      'Cache-Control': 'no-cache',
-    });
-    res.flushHeaders();
-  });
-}
-
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
