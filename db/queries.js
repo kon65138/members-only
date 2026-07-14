@@ -62,7 +62,16 @@ async function upgradeToAdmin(username) {
   return results[0];
 }
 
+async function upgradeToMember(username) {
+  const results = await pool.query(
+    'UPDATE users SET ismember = true WHERE username = $1',
+    [username],
+  );
+  return results[0];
+}
+
 module.exports = {
+  upgradeToMember,
   upgradeToAdmin,
   findByUsername,
   createUser,

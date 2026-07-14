@@ -11,8 +11,9 @@ const signUpRouter = require('./routes/signUpRouter');
 const loginRouter = require('./routes/loginRouter');
 const homepageRouter = require('./routes/homepageRouter');
 const createMessageRouter = require('./routes/createMessageRouter');
-const logoutRouter = require('./routes/logout');
+const logoutRouter = require('./routes/logoutRouter');
 const adminLogInRouter = require('./routes/adminLoginRouter');
+const joinClubRouter = require('./routes/joinClubRouter');
 require('./config/passport');
 
 const app = express();
@@ -67,6 +68,7 @@ app.use('/homepage', homepageRouter);
 app.use('/createMessage', createMessageRouter);
 app.use('/logout', logoutRouter);
 app.use('/adminLogin', adminLogInRouter);
+app.use('/joinClub', joinClubRouter);
 
 app.use((err, req, res, next) => {
   console.error(err);
