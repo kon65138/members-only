@@ -100,3 +100,16 @@ body {
   border: 1px solid grey;
   padding: 0.2rem;
 }
+
+.backWrapper {
+  width: 60vw;
+  display: flex;
+  justify-content: left;
+}
+
+.homeBtn {
+  border: 2px solid rgb(80, 80, 80);
+  color: rgb(22, 22, 22);
+  width: fit-content;
+  padding: 0.2rem;
+}

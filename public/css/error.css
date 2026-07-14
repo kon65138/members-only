@@ -15,9 +15,3 @@ h2 {
   overflow: hidden;
   color: grey;
 }
-
-.formWrapper a {
-  border: 1px solid grey;
-  width: fit-content;
-  padding: 0.2rem;
-}

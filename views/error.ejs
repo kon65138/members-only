@@ -14,15 +14,19 @@
     <title>Something went wrong</title>
 </head>
 <body>
-    <%- include('partials/header') %>
+    <% if (typeof currentUser !== 'undefined' && currentUser) { %>
+        <%- include('partials/header') %>
+    <% } %>
     <div class="formWrapper">
         <h2><%= status %></h2>
         <h3>Something went wrong</h3>
         <% if (message) { %>
             <p><%= message %></p>
         <% } %>
-        <a href="/">Back to home</a>
+        <a href="/homepage" class="homeBtn">Back to home</a>
     </div>
-    <%- include('partials/dev-reload') %>
+    <% if (typeof dev !== 'undefined' && dev) { %>
+        <%- include('partials/dev-reload') %>
+    <% } %>
 </body>
 </html>
