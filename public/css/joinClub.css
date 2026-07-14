@@ -47,7 +47,7 @@ input {
   border: 1px solid rgb(80, 80, 80);
 }
 
-button {
+#joinClubForm button {
   border: 1px solid rgb(80, 80, 80);
   height: 2rem;
   width: 10rem;

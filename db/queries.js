@@ -33,7 +33,7 @@ async function findById(id) {
 
 async function getAllUsernames() {
   const results = await pool.query('SELECT username FROM users');
-  return results[0];
+  return results.rows;
 }
 
 async function createMessage({ title, body, author_id }) {
@@ -59,7 +59,7 @@ async function upgradeToAdmin(username) {
     'UPDATE users SET isadmin = true WHERE username = $1 RETURNING *',
     [username],
   );
-  return results[0];
+  return results.rows[0];
 }
 
 async function upgradeToMember(username) {
@@ -67,7 +67,7 @@ async function upgradeToMember(username) {
     'UPDATE users SET ismember = true WHERE username = $1 RETURNING *',
     [username],
   );
-  return results[0];
+  return results.rows[0];
 }
 
 async function deleteMessage(messageId) {
@@ -75,7 +75,7 @@ async function deleteMessage(messageId) {
     messageId,
   ]);
 
-  return results[0];
+  return results.rows[0];
 }
 
 module.exports = {

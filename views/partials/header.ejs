@@ -1,3 +1,4 @@
+<% if (typeof currentUser !== 'undefined' && currentUser) { %>
 <header id="titleHeader">
     <h1 id="title"><a href="<%= currentUser ? '/homepage' : '/' %>">Club House</a></h1>
     <div class="btn">
@@ -12,3 +13,4 @@
         <% } %>
     </div>
 </header>
+<% } %>

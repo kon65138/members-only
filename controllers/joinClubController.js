@@ -6,7 +6,7 @@ function joinClubGet(req, res, next) {
 
 async function joinClubPost(req, res, next) {
   await upgradeToMember(req.user.username);
-  res.redirect('homepage');
+  res.redirect('/homepage');
 }
 
 module.exports = { joinClubGet, joinClubPost };

@@ -6,7 +6,7 @@ function adminLoginGet(req, res, next) {
 
 async function adminLoginPost(req, res, next) {
   await upgradeToAdmin(req.user.username);
-  res.redirect('homepage');
+  res.redirect('/homepage');
 }
 
 module.exports = { adminLoginGet, adminLoginPost };
