@@ -11,38 +11,36 @@
     />
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/signUp.css">
-    <title>Sign Up</title>
+    <title>Gen Sign Up</title>
 </head>
 <body>
     <%- include('partials/header') %>
     <div class="formWrapper">
-        <h2>Sign Up</h2>
-        <form action="/signUp" id="signUpForm" method="post">
+        <h2>Gen Sign Up</h2>
+        <form action="/genSignUp" id="signUpForm" method="post">
             <div class="inptWrapper">
                 <label for="firstName">First Name</label>
-                <input type="text" id="firstName" name="first_name" value="<%= values.first_name ? values.first_name : '' %>" required>
+                <input type="text" id="firstName" name="first_name" value="<%= values.first_name %>" readonly>
             </div>
             <div class="inptWrapper">
                 <label for="lastName">Last Name</label>
-                <input type="text" id="lastName" name="last_name" value="<%= values.last_name ? values.last_name : '' %>">
+                <input type="text" id="lastName" name="last_name" value="<%= values.last_name %>" readonly>
             </div>
             <div class="inptWrapper">
                 <label for="username">Username or Email</label>
-                <input type="text" id="username" name="username" value="<%= values.username ? values.username : '' %>" required>
+                <input type="text" id="username" name="username" value="<%= values.username %>" readonly>
             </div>
             <div class="inptWrapper">
                 <label for="password">Password</label>
-                <input type="password" id="password" name="password" required>
+                <input type="text" id="password" name="password" value="<%= values.password %>" readonly>
             </div>
-            <div class="inptWrapper">
-                <label for="passwordConfirmation">Password Confirmation</label>
-                <input type="password" id="passwordConfirmation" name="password_confirmation" required>
-            </div>
+            <div>Remember to save the credentials!!</div>
             <span class="errors"><ul><% if (errors) {errors.forEach( error => { %>
                                         <li><%= error.msg %></li>
                                     <% })} %>
                                 </ul></span>
             <button type="submit">Sign Up</button>
+            <button type="button" onclick="location.reload()">regenerate</button>
         </form>
     </div>
     <%- include('partials/dev-reload') %>
